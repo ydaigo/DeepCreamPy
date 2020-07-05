@@ -1,0 +1,18 @@
+version: "3"
+services:
+  test:
+    build: .
+    volumes:
+      - $PWD:/working
+    working_dir: /working
+    ports:
+      - 8888:8888
+    environment:
+      - PYTHONPATH=/working
+      - DISPLAY=$DISPLAY
+    stdin_open: true
+    tty: true
+    command: bash
+    network_mode: "host"
+
+    
